@@ -17,13 +17,10 @@
     </div>
 </main> -->
 
-<div class="row">
-      
-      <div class="col s8 offset-s2"></div>
-</div>
+<main>
 <h1>Sign Up</h1>
 <div class="row">
-    <form class="col s6 offset-s3">
+    <form class="col s6 offset-s3" action="includes/signup.inc.php" method="post">
       <div class="row">
 
         <div class="input-field col s12">
@@ -46,7 +43,7 @@
           <label for="password">Repeat Password</label>
         </div>
 
-        <button class="btn waves-effect waves-light" type="submit" name="signup-submit">Submit
+        <button class="btn waves-effect waves-light" type="submit" name="signup-submit">Sign Up
             <i class="material-icons right">send</i>
         </button>
 
@@ -54,6 +51,7 @@
       
     </form>
   </div>
+</main>
 <?php 
     include_once 'footer.php';
 ?>
