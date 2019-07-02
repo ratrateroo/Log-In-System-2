@@ -1,25 +1,99 @@
 <?php 
     include_once 'header.php';
+  
 ?>
-
-<!-- <main>
-    <div>
-        <section>
-            <h1>Sign Up</h1>
-            <form action="includes/signup.inc.php" method="post">
-                <input type="text" name="uid" placeholder="Username">
-                <input type="email" name="mail" placeholder="E-mail">
-                <input type="password" name="pwd" placeholder="Password">
-                <input type="password" name="pwd-repeat" placeholder="Repeat password">
-                <button type="submit" name="signup-submit">Sign Up</button>
-            </form>
-        </section>
-    </div>
-</main> -->
 
 <main>
 <h1>Sign Up</h1>
+
+
+
+
+    
+  
+
 <div class="row">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<?php 
+if (isset($_GET['error'])) {
+  if ($_GET['error'] == "emptyfields") {
+    echo '<div class="col s12 m6 offset-m3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Fill in all fields!</span>          
+      </div>        
+    </div>
+</div>';
+  }
+  else if($_GET['error'] == "invalidemailuid") {
+    echo '<div class="col s12 m6 offset-m3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Invalid Username and Email!</span>          
+      </div>        
+    </div>
+</div>';
+  }
+  else if($_GET['error'] == "invaliduid") {
+    echo '<div class="col s12 m6 offset-m3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Invalid Username!</span>          
+      </div>        
+    </div>
+</div>';
+  }
+  else if($_GET['error'] == "invalidemail") {
+    echo '<div class="col s12 m6 offset-m3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Invalid Email!</span>          
+      </div>        
+    </div>
+</div>';
+  }
+  else if($_GET['error'] == "passwordcheck") {
+    echo '<div class="col s12 m6 offset-m3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Your passwords do not match!</span>          
+      </div>        
+    </div>
+</div>';
+  }
+  else if($_GET['error'] == "usertaken") {
+    echo '    <div class="col s12 m6 offset-m3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Username'.$_GET['uid'].' is already taken!</span>          
+      </div>        
+    </div>
+</div>';
+  }
+}
+else if ($_GET['signup'] == "success") {
+  echo '<div class="col s12 m6 offset-m3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Log In Successful!</span> 
+        <span class="card-title">Welcome: '.$_GET['uid'].' !</span>          
+      </div>        
+    </div>
+</div>';
+}
+?>
     <form class="col s6 offset-s3" action="includes/signup.inc.php" method="post">
       <div class="row">
 
